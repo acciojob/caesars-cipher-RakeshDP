@@ -11,16 +11,21 @@ const lookup = {
 };
 
 function rot13(encodedStr){
-   let decodedArr =""; // Your Result goes here
+   let decodedArr =''; // Your Result goes here
 	 // Only change code below this line
 
-	for( let i= 0; i< encodedStr.length; i++){
-		if((encodedStr[i]) === undefined){
-			decodedArr+=(encodedStr[i]);
-		}
-		else {
-			decodedArr+=(lookup(encodedStr[i]));
-		}
+	// for( let i= 0; i< encodedStr.length; i++){
+	// 	if((encodedStr[i]) === undefined){
+	// 		decodedArr+=(encodedStr[i]);
+	// 	}
+	// 	else {
+	// 		decodedArr+=(lookup(encodedStr[i]));
+	// 	}
+	 for (let i = 0; i < encodedStr.length; i++) {
+    const char = encodedStr[i];
+    const decodedChar = lookup[char] || char;
+    decodedStr += decodedChar;
+  }
 	}return decodedArr;
 }
 
